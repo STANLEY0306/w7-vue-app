@@ -6,6 +6,7 @@ import PracticeLog from './components/PracticeLog.vue'
 import TabBar from './components/TabBar.vue'
 import TrickSection from './components/TrickSection.vue'
 import AskForm from './components/AskForm.vue'
+import AskMagic from './components/AskMagic.vue'
 import { initCardTrick21, initNumberTrick, initBirthdayTrick } from './tricks.js'
 
 /* ===== 模擬資料：每個陣列都用 v-for 傳給對應的元件 ===== */
@@ -13,6 +14,7 @@ const links = [
   { href: '#table', text: '試玩魔術' },
   { href: '#practice', text: '學習與練習' },
   { href: '#ask', text: '提問' },
+  { href: '#ai', text: '問老師' },
 ]
 
 const resources = [
@@ -150,6 +152,14 @@ onMounted(() => {
           <p class="lead">想知道魔術怎麼練、牌怎麼選，都可以問。留下 Email 和問題，我會回覆你。</p>
         </div>
         <AskForm />
+      </section>
+
+      <section class="ask" id="ai" aria-labelledby="ai-heading">
+        <div class="ask-intro">
+          <h2 id="ai-heading">問問魔術老師</h2>
+          <p class="lead">這裡接的是我電腦上的本地 AI（Ollama），問它魔術怎麼練。只有在我的電腦開著 Ollama 時才能回答。</p>
+        </div>
+        <AskMagic />
       </section>
     </div>
   </main>
